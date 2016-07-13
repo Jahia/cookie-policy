@@ -9,6 +9,9 @@
  - cookieMessage (string) = 'This website uses cookies to improve your experience. ' internationalized
  - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
  - cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
+ - cookieDomain (string)
+ - cookieExpires (long) = '365'
+ - cookieOverlayEnabled (string, choicelist[resourceBundle]) = 'false' autocreated < 'false', 'true'
  - cookieLink (string, choicelist[cookieMessageInitializer,resourceBundle]) = 'none'
 
 [jmix:cookiePolicyLink] > jmix:templateMixin mixin

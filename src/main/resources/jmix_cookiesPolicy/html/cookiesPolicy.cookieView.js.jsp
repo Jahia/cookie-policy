@@ -23,21 +23,32 @@
 <c:set var="cookieModalMessage" value="${currentNode.properties.cookieModalMessage.string}"/>
 <c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
 <c:set var="cookieWhatAreLinkText" value="${currentNode.properties.cookieWhatAreLinkText.string}"/>
+<c:set var="cookieOverlayEnabled" value="${currentNode.properties.cookieOverlayEnabled.string}"/>
+<c:set var="cookieDomain" value="${currentNode.properties.cookieDomain.string}"/>
+<c:set var="cookieExpires" value="${currentNode.properties.cookieExpires.string}"/>
 <c:set var="cookieAcceptButtonText" value="${currentNode.properties.cookieAcceptButtonText.string}"/>
 
 <template:addResources type="inline">
     <script>
         $(document).ready(function () {
             $.cookieCuttr({
-                cookieExpires: 365
+                <c:if test="${! empty cookieExpires}">
+                    cookieExpires: ${cookieExpires}
+                </c:if>
+                <c:if test="${! empty cookieOverlayEnabled}">
+                , cookieOverlayEnabled: ${cookieOverlayEnabled}
+                </c:if>
                 <c:if test="${! empty cookieMessage}">
-                    , cookieAnalyticsMessage: '${cookieMessage}'
+                , cookieAnalyticsMessage: '${cookieMessage}'
                 </c:if>
                 <c:if test="${! empty cookieAcceptButtonText}">
                     , cookieAcceptButtonText: '${fn:escapeXml(cookieAcceptButtonText)}'
                 </c:if>
                 <c:if test="${! empty cookieWhatAreLinkText}">
                     , cookieWhatAreLinkText: '${fn:escapeXml(cookieWhatAreLinkText)}'
+                </c:if>
+                <c:if test="${! empty cookieDomain}">
+                , cookieDomain: '${fn:escapeXml(cookieDomain)}'
                 </c:if>
                 <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyExternalLink')}">
                     <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageExternalLink.string}" />
