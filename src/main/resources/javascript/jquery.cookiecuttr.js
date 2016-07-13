@@ -185,7 +185,7 @@
                     if (cookieModal){
                         $('body').append('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline +
                             '<a href="#" title="Visit all about cookies (External link)" data-toggle="modal" data-target="#cookieModal">' + cookieWhatAreLinkText + '</a></div>' +
-                            '<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
+                            '<div class="modal fade modal-cookiesPolicy" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
                             '<div class="modal-dialog">' +
                             '<div class="modal-content">' +
                             '<div class="modal-header">' +
@@ -208,7 +208,7 @@
                     if (cookieModal) {
                         $('body').prepend('<div class="cc-cookies ' + cookieOverlay + '">' + cookieAnalyticsMessage + cookieAccept + cookieDecline +
                             '<a href="#" title="Visit all about cookies (External link)" data-toggle="modal" data-target="#cookieModal">' + cookieWhatAreLinkText + '</a></div>' +
-                            '<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
+                            '<div class="modal fade modal-cookiesPolicy" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="About Cookies" aria-hidden="true">' +
                             '<div class="modal-dialog">' +
                             '<div class="modal-content">' +
                             '<div class="modal-header">' +

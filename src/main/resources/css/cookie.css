@@ -27,5 +27,8 @@
     height: 28px;
     line-height: 28px;
 }
+.modal-cookiesPolicy {
+    z-index:99999;
+}
 
 .cookieButton.button-rounded { border-radius: 3px; }
