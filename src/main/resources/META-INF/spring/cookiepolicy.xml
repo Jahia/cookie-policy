@@ -9,7 +9,7 @@
         <property name="items">
             <list>
                 <bean class="org.jahia.services.content.nodetypes.initializers.ChoiceListValue">
-                    <property name="displayName" value="None"/>
+                    <property name="displayName" value="http://www.allaboutcookies.org/"/>
                     <property name="stringValue" value="none"/>
                     <property name="properties">
                         <map>
