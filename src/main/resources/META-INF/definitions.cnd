@@ -12,7 +12,7 @@
  - cookieDomain (string)
  - cookieExpires (long) = '365'
  - cookieOverlayEnabled (string, choicelist[resourceBundle]) = 'false' autocreated < 'false', 'true'
- - cookieLink (string, choicelist[cookieMessageInitializer,resourceBundle]) = 'none'
+ - cookieLink (string, choicelist[cookiePolicyMessageInitializer,resourceBundle]) < 'link', 'externalLink', 'modal'
 
 [jmix:cookiePolicyLink] > jmix:templateMixin mixin
  extends = jnt:virtualsite
@@ -22,7 +22,7 @@
 [jmix:cookiePolicyExternalLink] > jmix:templateMixin mixin
  extends = jnt:virtualsite
  itemtype = options
- - cookiePageExternalLink (string) = 'http://www.allaboutcookies.org/' internationalized
+ - cookiePageExternalLink (string) = 'http://www.allaboutcookies.org/' autocreated internationalized
 
 [jmix:cookiePolicyModalMessage] > jmix:templateMixin mixin
  extends = jnt:virtualsite
