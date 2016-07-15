@@ -87,11 +87,11 @@
         var cookieModal = options.cookieModal;
 
         // cookie identifier
-        var $cookieAccepted = $.cookie('cc_cookie_accept') == "cc_cookie_accept";
+        var $cookieAccepted = Cookies.set('cc_cookie_accept') == "cc_cookie_accept";
         $.cookieAccepted = function () {
             return $cookieAccepted;
         };
-        var $cookieDeclined = $.cookie('cc_cookie_decline') == "cc_cookie_decline";
+        var $cookieDeclined = Cookies.set('cc_cookie_decline') == "cc_cookie_decline";
         $.cookieDeclined = function () {
             return $cookieDeclined;
         };
@@ -264,37 +264,37 @@
         $('.cc-cookie-accept, .cc-cookie-decline').click(function (e) {
             e.preventDefault();
             if ($(this).is('[href$=#decline]')) {
-                $.cookie("cc_cookie_accept", null, {
+                Cookies.set("cc_cookie_accept", null, {
                     path: '/'
                 });
-                $.cookie("cc_cookie_decline", "cc_cookie_decline", {
+                Cookies.set("cc_cookie_decline", "cc_cookie_decline", {
                     expires: cookieExpires,
                     path: '/'
                 });
                 if (options.cookieDomain) {
                     // kill google analytics cookies
-                    $.cookie("__utma", null, {
+                    Cookies.set("__utma", null, {
                         domain: '.' + options.cookieDomain,
                         path: '/'
                     });
-                    $.cookie("__utmb", null, {
+                    Cookies.set("__utmb", null, {
                         domain: '.' + options.cookieDomain,
                         path: '/'
                     });
-                    $.cookie("__utmc", null, {
+                    Cookies.set("__utmc", null, {
                         domain: '.' + options.cookieDomain,
                         path: '/'
                     });
-                    $.cookie("__utmz", null, {
+                    Cookies.set("__utmz", null, {
                         domain: '.' + options.cookieDomain,
                         path: '/'
                     });
                 }
             } else {
-                $.cookie("cc_cookie_decline", null, {
+                Cookies.set("cc_cookie_decline", null, {
                     path: '/'
                 });
-                $.cookie("cc_cookie_accept", "cc_cookie_accept", {
+                Cookies.set("cc_cookie_accept", "cc_cookie_accept", {
                     expires: cookieExpires,
                     path: '/'
                 });
@@ -307,10 +307,10 @@
         //reset cookies
         $('a.cc-cookie-reset').click(function (f) {
             f.preventDefault();
-            $.cookie("cc_cookie_accept", null, {
+            Cookies.set("cc_cookie_accept", null, {
                 path: '/'
             });
-            $.cookie("cc_cookie_decline", null, {
+            Cookies.set("cc_cookie_decline", null, {
                 path: '/'
             });
             $(".cc-cookies").fadeOut(function () {
@@ -321,11 +321,11 @@
         //cookie error accept
         $('.cc-cookies-error a.cc-cookie-accept').click(function (g) {
             g.preventDefault();
-            $.cookie("cc_cookie_accept", "cc_cookie_accept", {
+            Cookies.set("cc_cookie_accept", "cc_cookie_accept", {
                 expires: cookieExpires,
                 path: '/'
             });
-            $.cookie("cc_cookie_decline", null, {
+            Cookies.set("cc_cookie_decline", null, {
                 path: '/'
             });
             // reload page to activate cookies

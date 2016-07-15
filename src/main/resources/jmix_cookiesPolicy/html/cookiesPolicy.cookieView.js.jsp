@@ -18,7 +18,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="cookie.css,cookiecuttr.css"/>
-<template:addResources type="javascript" resources="jquery.cookie.js,jquery.cookiecuttr.js"/>
+<template:addResources type="javascript" resources="js.cookie.js,jquery.cookiecuttr.js"/>
 
 <c:set var="cookieModalMessage" value="${currentNode.properties.cookieModalMessage.string}"/>
 <c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
