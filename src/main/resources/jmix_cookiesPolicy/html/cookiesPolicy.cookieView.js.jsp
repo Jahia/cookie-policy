@@ -35,7 +35,7 @@
                 <c:if test="${! empty cookieExpires}">
                     cookieExpires: ${cookieExpires}
                 </c:if>
-                <c:if test="${! empty cookieOverlayEnabled}">
+                <c:if test="${! empty cookieOverlayEnabled and empty param['policycookie']}">
                 , cookieOverlayEnabled: ${cookieOverlayEnabled}
                 </c:if>
                 <c:if test="${! empty cookieMessage}">
@@ -59,12 +59,14 @@
                 <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyLink')}">
                     <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" context="/"/>
                     <c:if test="${! empty cookieWhatAreTheyLink}">
-                        , cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
+                        , cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}?policycookie=true'
                     </c:if>
                 </c:if>
                 <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyModalMessage')}">
                     , cookieModal: true
                 </c:if>
+                , cookieSite: "${currentNode.resolveSite.name}"
+                , cookieEffectiveDate: "<fmt:formatDate value="${currentNode.properties.cookieEffectiveDate.time}" pattern="yyyy-MM-dd HH:mm:ss"/>"
             });
         });
     </script>

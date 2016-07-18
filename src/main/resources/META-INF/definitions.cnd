@@ -13,6 +13,7 @@
  - cookieExpires (long) = '365'
  - cookieOverlayEnabled (string, choicelist[resourceBundle]) = 'false' autocreated < 'false', 'true'
  - cookieLink (string, choicelist[cookiePolicyMessageInitializer,resourceBundle]) < 'link', 'externalLink', 'modal'
+ - cookieEffectiveDate (date) mandatory
 
 [jmix:cookiePolicyLink] > jmix:templateMixin mixin
  extends = jnt:virtualsite
