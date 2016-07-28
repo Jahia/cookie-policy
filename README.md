@@ -4,8 +4,8 @@
 This module allow you to display a cookies consent message on your site.
 
 ### MINIMAL REQUIREMENTS
-* DXM 7.1.2.0
-* Jahia modules Bootstrap 3 Core
+* DXM 7.1.1.0
+* Jahia modules Bootstrap 3 Core  
 **NOTE:** It is possible to remove the dependency but if you do be aware of that the modal display option will not work anymore!
 
 ### HOW TO?
