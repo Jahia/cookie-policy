@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <cookiepolicy j:dependencies="default"
+        <cookiepolicy j:dependencies="bootstrap3-core default"
                     j:modulePriority="0"
                     j:moduleType="module"
                     j:title="cookiePolicy"
                     jcr:mixinTypes="jmix:hasExternalProviderExtension"
                     jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-cookiepolicy-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <jmix_cookiesPolicy jcr:primaryType="jnt:nodeTypeFolder">
-                                    <html jcr:primaryType="jnt:templateTypeFolder">
-                                        <cookiesPolicy.cookieView.js.jsp jcr:primaryType="jnt:viewFile"/>
-                                    </html>
-                                </jmix_cookiesPolicy>
-                                <META-INF jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder"/>
