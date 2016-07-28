@@ -59,8 +59,9 @@
   <name>Cookie Policy</name>
   <description>This is the custom module (cookiePolicy) for running on a Digital Experience Manager server.</description>
   <scm>
-    <connection>scm:dummy:uri</connection>
-    <developerConnection>scm:dummy:uri</developerConnection>
+    <connection>scm:git:https://github.com/Jahia/cookie-policy</connection>
+    <developerConnection>scm:git:https://github.com/Jahia/cookie-policy</developerConnection>
+    <url>scm:git:https://github.com/Jahia/cookie-policy</url>
   </scm>
   <properties>
     <jahia-depends>bootstrap3-core,default</jahia-depends>
