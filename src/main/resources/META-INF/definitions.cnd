@@ -1,11 +1,13 @@
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<cpnt = 'http://www.jahia.org/jahia/cp/nt/1.0'>
+<cpmix = 'http://www.jahia.org/jahia/cp/mix/1.0'>
+<cp = 'http://www.jahia.org/jahia/cp/1.0'>
 
 [jnt:cookiePolicy] > jnt:content, jmix:structuredContent
 
+// deprecated
 [jmix:cookiesPolicy] mixin
- extends = jnt:virtualsite
- itemtype = options
  - cookieMessage (string) = 'This website uses cookies to improve your experience. ' internationalized
  - cookieAcceptButtonText (string) = 'ACCEPT' internationalized
  - cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
@@ -15,18 +17,41 @@
  - cookieLink (string, choicelist[cookiePolicyMessageInitializer,resourceBundle]) < 'link', 'externalLink', 'modal'
  - cookieEffectiveDate (date) mandatory
 
+// deprecated
 [jmix:cookiePolicyLink] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
  - cookiePageLink (weakreference, picker[type='page']) < 'jnt:page'
 
+// deprecated
 [jmix:cookiePolicyExternalLink] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
  - cookiePageExternalLink (string) = 'http://www.allaboutcookies.org/' autocreated internationalized
 
+// deprecated
 [jmix:cookiePolicyModalMessage] > jmix:templateMixin mixin
- extends = jnt:virtualsite
- itemtype = options
  - cookieModalMessage (string, richtext) internationalized
 
+[cpmix:cookiesPolicy] mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cp:cookieMessage (string) = 'This website uses cookies to improve your experience. ' internationalized
+ - cp:cookieAcceptButtonText (string) = 'ACCEPT' internationalized
+ - cp:cookieWhatAreLinkText (string) = 'We assume you are ok with this, but you can learn more about cookies by clicking here.' internationalized
+ - cp:cookieDomain (string)
+ - cp:cookieExpires (long) = '365'
+ - cp:cookieOverlayEnabled (string, choicelist[resourceBundle]) = 'false' autocreated < 'false', 'true'
+ - cp:cookieLink (string, choicelist[cookiePolicyMessageInitializer,resourceBundle]) < 'link', 'externalLink', 'modal'
+ - cp:cookieEffectiveDate (date) mandatory
+
+[cpmix:cookiePolicyLink] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cp:cookiePageLink (weakreference, picker[type='page']) < 'jnt:page'
+
+[cpmix:cookiePolicyExternalLink] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cp:cookiePageExternalLink (string) = 'http://www.allaboutcookies.org/' autocreated internationalized
+
+[cpmix:cookiePolicyModalMessage] > jmix:templateMixin mixin
+ extends = jnt:virtualsite
+ itemtype = options
+ - cp:cookieModalMessage (string, richtext) internationalized

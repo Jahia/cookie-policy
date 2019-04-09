@@ -13,7 +13,7 @@
                     <property name="stringValue" value="externalLink"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="jmix:cookiePolicyExternalLink"/>
+                            <entry key="addMixin" value="cpmix:cookiePolicyExternalLink"/>
                         </map>
                     </property>
                 </bean>
@@ -22,7 +22,7 @@
                     <property name="stringValue" value="link"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="jmix:cookiePolicyLink"/>
+                            <entry key="addMixin" value="cpmix:cookiePolicyLink"/>
                         </map>
                     </property>
                 </bean>
@@ -31,7 +31,7 @@
                     <property name="stringValue" value="modal"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="jmix:cookiePolicyModalMessage"/>
+                            <entry key="addMixin" value="cpmix:cookiePolicyModalMessage"/>
                         </map>
                     </property>
                 </bean>
@@ -39,4 +39,7 @@
         </property>
     </bean>
 
+    <bean id="cookiePolicyMigration" class="org.jahia.modules.cookiePolicy.CookiePolicyMigration">
+        <property name="scriptEngineUtils" ref="scriptEngineUtils"/>
+    </bean>
 </beans>

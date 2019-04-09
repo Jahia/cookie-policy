@@ -20,13 +20,13 @@
 <template:addResources type="css" resources="cookie.css,cookiecuttr.css"/>
 <template:addResources type="javascript" resources="js.cookie.js,jquery.cookiecuttr.js"/>
 
-<c:set var="cookieModalMessage" value="${currentNode.properties.cookieModalMessage.string}"/>
-<c:set var="cookieMessage" value="${currentNode.properties.cookieMessage.string}"/>
-<c:set var="cookieWhatAreLinkText" value="${currentNode.properties.cookieWhatAreLinkText.string}"/>
-<c:set var="cookieOverlayEnabled" value="${currentNode.properties.cookieOverlayEnabled.string}"/>
-<c:set var="cookieDomain" value="${currentNode.properties.cookieDomain.string}"/>
-<c:set var="cookieExpires" value="${currentNode.properties.cookieExpires.string}"/>
-<c:set var="cookieAcceptButtonText" value="${currentNode.properties.cookieAcceptButtonText.string}"/>
+<c:set var="cookieModalMessage" value="${currentNode.properties['cp:cookieModalMessage'].string}"/>
+<c:set var="cookieMessage" value="${currentNode.properties['cp:cookieMessage'].string}"/>
+<c:set var="cookieWhatAreLinkText" value="${currentNode.properties['cp:cookieWhatAreLinkText'].string}"/>
+<c:set var="cookieOverlayEnabled" value="${currentNode.properties['cp:cookieOverlayEnabled'].string}"/>
+<c:set var="cookieDomain" value="${currentNode.properties['cp:cookieDomain'].string}"/>
+<c:set var="cookieExpires" value="${currentNode.properties['cp:cookieExpires'].string}"/>
+<c:set var="cookieAcceptButtonText" value="${currentNode.properties['cp:cookieAcceptButtonText'].string}"/>
 
 <template:addResources type="inline">
     <script>
@@ -50,23 +50,23 @@
                 <c:if test="${! empty cookieDomain}">
                 , cookieDomain: '${fn:escapeXml(cookieDomain)}'
                 </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyExternalLink')}">
-                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageExternalLink.string}" />
+                <c:if test="${jcr:isNodeType(currentNode, 'cpmix:cookiePolicyExternalLink')}">
+                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties['cp:cookiePageExternalLink'].string}" />
                     <c:if test="${! empty cookieWhatAreTheyLink}">
                     ,cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}'
                     </c:if>
                 </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyLink')}">
-                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties.cookiePageLink.node.url}" context="/"/>
+                <c:if test="${jcr:isNodeType(currentNode, 'cpmix:cookiePolicyLink')}">
+                    <c:url var="cookieWhatAreTheyLink" value="${currentNode.properties['cp:cookiePageLink'].node.url}" context="/"/>
                     <c:if test="${! empty cookieWhatAreTheyLink}">
                         , cookieWhatAreTheyLink: '${fn:escapeXml(cookieWhatAreTheyLink)}?policycookie=true'
                     </c:if>
                 </c:if>
-                <c:if test="${jcr:isNodeType(currentNode, 'jmix:cookiePolicyModalMessage')}">
+                <c:if test="${jcr:isNodeType(currentNode, 'cpmix:cookiePolicyModalMessage')}">
                     , cookieModal: true
                 </c:if>
                 , cookieSite: "${currentNode.resolveSite.name}"
-                , cookieEffectiveDate: "<fmt:formatDate value="${currentNode.properties.cookieEffectiveDate.time}" pattern="yyyy-MM-dd HH:mm:ss"/>"
+                , cookieEffectiveDate: "<fmt:formatDate value="${currentNode.properties['cp:cookieEffectiveDate'].time}" pattern="yyyy-MM-dd HH:mm:ss"/>"
             });
         });
     </script>

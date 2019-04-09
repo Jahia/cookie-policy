@@ -19,7 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <c:set var="siteNode" value="${renderContext.site}"/>
-<c:if test="${jcr:isNodeType(siteNode, 'jmix:cookiesPolicy')}">
+<c:if test="${jcr:isNodeType(siteNode, 'cpmix:cookiesPolicy')}">
     <template:module node="${siteNode}" view="cookieView" editable="false"/>
 </c:if>
 
