@@ -40,6 +40,7 @@ def migrateMixinsCB = new JCRCallback<Object>() {
                 e.printStackTrace();
             }
         }
+        log.info("End " + sourceNodeType + " mixin migrated in " + jcrSession.getWorkspace().getName() + " workspace");
     }
 
     public Object doInJCR(JCRSessionWrapper jcrSession) throws RepositoryException {
