@@ -13,7 +13,7 @@
                     <property name="stringValue" value="externalLink"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="cpmix:cookiePolicyExternalLink"/>
+                            <entry key="addMixin" value="cookie_policy_mix:cookiePolicyExternalLink"/>
                         </map>
                     </property>
                 </bean>
@@ -22,7 +22,7 @@
                     <property name="stringValue" value="link"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="cpmix:cookiePolicyLink"/>
+                            <entry key="addMixin" value="cookie_policy_mix:cookiePolicyLink"/>
                         </map>
                     </property>
                 </bean>
@@ -31,7 +31,7 @@
                     <property name="stringValue" value="modal"/>
                     <property name="properties">
                         <map>
-                            <entry key="addMixin" value="cpmix:cookiePolicyModalMessage"/>
+                            <entry key="addMixin" value="cookie_policy_mix:cookiePolicyModalMessage"/>
                         </map>
                     </property>
                 </bean>

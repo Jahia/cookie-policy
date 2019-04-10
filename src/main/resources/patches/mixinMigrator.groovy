@@ -29,7 +29,7 @@ def migrateMixinsCB = new JCRCallback<Object>() {
 
                 for (ExtendedPropertyDefinition cookiePolicyPropDef : cookiePolicyPropDefs) {
                     if (site.hasProperty(cookiePolicyPropDef.getName())) {
-                        site.setProperty("cp:" + cookiePolicyPropDef.getName(), site.getProperty(cookiePolicyPropDef.getName()).getValue())
+                        site.setProperty("cookie_policy:" + cookiePolicyPropDef.getName(), site.getProperty(cookiePolicyPropDef.getName()).getValue())
                     }
                 }
 
@@ -47,10 +47,10 @@ def migrateMixinsCB = new JCRCallback<Object>() {
         JCRObservationManager.setEventListenersAvailableDuringPublishOnly(true)
 
         try {
-            migrateMixin(jcrSession, "jmix:cookiesPolicy", "cpmix:cookiesPolicy");
-            migrateMixin(jcrSession, "jmix:cookiePolicyLink", "cpmix:cookiePolicyLink");
-            migrateMixin(jcrSession, "jmix:cookiePolicyExternalLink", "cpmix:cookiePolicyExternalLink");
-            migrateMixin(jcrSession, "jmix:cookiePolicyModalMessage", "cpmix:cookiePolicyModalMessage");
+            migrateMixin(jcrSession, "jmix:cookiesPolicy", "cookie_policy_mix:cookiesPolicy");
+            migrateMixin(jcrSession, "jmix:cookiePolicyLink", "cookie_policy_mix:cookiePolicyLink");
+            migrateMixin(jcrSession, "jmix:cookiePolicyExternalLink", "cookie_policy_mix:cookiePolicyExternalLink");
+            migrateMixin(jcrSession, "jmix:cookiePolicyModalMessage", "cookie_policy_mix:cookiePolicyModalMessage");
         } finally {
             JCRObservationManager.setEventListenersAvailableDuringPublishOnly(false);
         }

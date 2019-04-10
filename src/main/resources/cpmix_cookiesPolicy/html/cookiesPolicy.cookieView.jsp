@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<c:set var="cookieModalMessage" value="${currentNode.properties['cp:cookieModalMessage'].string}"/>
+<c:set var="cookieModalMessage" value="${currentNode.properties['cookie_policy:cookieModalMessage'].string}"/>
 
 <template:include view="cookieView.js"/>
 
