@@ -28,7 +28,15 @@ def migrateMixinsCB = new JCRCallback<Object>() {
                 site.addMixin(destinationNodeType);
 
                 for (ExtendedPropertyDefinition cookiePolicyPropDef : cookiePolicyPropDefs) {
-                    if (site.hasProperty(cookiePolicyPropDef.getName())) {
+                    if (cookiePolicyPropDef.isInternationalized()) {
+                        NodeIterator i18ns = site.getI18Ns()
+                        while (i18ns.hasNext()) {
+                            javax.jcr.Node i18n = i18ns.next();
+                            if (i18n.hasProperty(cookiePolicyPropDef.getName())) {
+                                i18n.setProperty("cookie_policy:" + cookiePolicyPropDef.getName(), i18n.getProperty(cookiePolicyPropDef.getName()).getValue())
+                            }
+                        }
+                    } else if (site.hasProperty(cookiePolicyPropDef.getName())) {
                         site.setProperty("cookie_policy:" + cookiePolicyPropDef.getName(), site.getProperty(cookiePolicyPropDef.getName()).getValue())
                     }
                 }
