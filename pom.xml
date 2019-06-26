@@ -59,7 +59,7 @@
   <description>This is the custom module (cookiePolicy) for running on a Digital Experience Manager server.</description>
   <scm>
     <connection>scm:git:https://github.com/Jahia/cookie-policy</connection>
-    <developerConnection>scm:git:https://github.com/Jahia/cookie-policy</developerConnection>
+    <developerConnection>scm:git:git@github.com:Jahia/cookie-policy</developerConnection>
     <url>scm:git:https://github.com/Jahia/cookie-policy</url>
     <tag>HEAD</tag>
   </scm>
