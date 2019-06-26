@@ -61,7 +61,7 @@
     <connection>scm:git:https://github.com/Jahia/cookie-policy</connection>
     <developerConnection>scm:git:git@github.com:Jahia/cookie-policy</developerConnection>
     <url>scm:git:https://github.com/Jahia/cookie-policy</url>
-    <tag>HEAD</tag>
+    <tag>1_1_x</tag>
   </scm>
   <properties>
     <jahia-depends>bootstrap3-core,default</jahia-depends>
