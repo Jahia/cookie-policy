@@ -39,7 +39,7 @@
                 , cookieOverlayEnabled: ${cookieOverlayEnabled}
                 </c:if>
                 <c:if test="${! empty cookieMessage}">
-                , cookieAnalyticsMessage: '${cookieMessage}'
+                , cookieAnalyticsMessage: '${fn:escapeXml(cookieMessage)}'
                 </c:if>
                 <c:if test="${! empty cookieAcceptButtonText}">
                     , cookieAcceptButtonText: '${fn:escapeXml(cookieAcceptButtonText)}'
