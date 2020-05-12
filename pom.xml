@@ -53,7 +53,7 @@
   </parent>
   <groupId>org.jahia.modules</groupId>
   <artifactId>cookiepolicy</artifactId>
-  <version>2.0.0</version>
+  <version>2.1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Cookie Policy</name>
   <description>This is the custom module (cookiePolicy) for running on a Digital Experience Manager server.</description>
@@ -61,7 +61,7 @@
     <connection>scm:git:https://github.com/Jahia/cookie-policy</connection>
     <developerConnection>scm:git:git@github.com:Jahia/cookie-policy</developerConnection>
     <url>scm:git:https://github.com/Jahia/cookie-policy</url>
-    <tag>2_0_0</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <jahia-depends>bootstrap3-core,default</jahia-depends>
